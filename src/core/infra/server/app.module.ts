@@ -2,13 +2,14 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 
 /* Global Modules */
-import { MongoModule } from '../infra/database/mongodb/mongo.module'
-import { EnvModule } from '../infra/env/env.module'
-import { envSchema } from '../infra/env/env'
+import { MongoModule } from '@/core/infra/database/mongodb/mongo.module'
+import { AuthModule } from '@/core/infra/auth/auth.module'
+import { EnvModule } from '@/core/infra/env/env.module'
+import { envSchema } from '@/core/infra/env/env'
 
-/* Bertie Modules */
-import { AuthModule } from '@/bertie/auth/auth.module'
+/* Http Modules */
 import { IdentityModule } from '@/bertie/identity/infra/identity.module'
+import { HttpModule } from '../http/http.module'
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { IdentityModule } from '@/bertie/identity/infra/identity.module'
     EnvModule,
     MongoModule,
     AuthModule,
+    HttpModule,
     IdentityModule,
   ],
 })

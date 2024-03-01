@@ -12,7 +12,7 @@ import { ZodValidationPipe } from '@/core/infra/pipes/zod-validation-pipe'
 
 import { AuthenticateUserUseCase } from '@/bertie/identity/application/use-cases/authenticate-user'
 import { WrongCredentialsError } from '@/bertie/identity/application/use-cases/errors/wrong-credentials-error'
-import { Public } from '@/bertie/auth/public'
+import { Public } from '@/core/infra/auth/public'
 
 const authenticateUserBodySchema = z.object({
   email: z.string().email(),
