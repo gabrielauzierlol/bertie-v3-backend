@@ -5,11 +5,11 @@ import { MongoMemoryServer } from 'mongodb-memory-server'
 import { disconnect } from 'mongoose'
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
-import { envSchema } from '@/core/env/env'
-import { EnvModule } from '@/core/env/env.module'
+import { envSchema } from '@/core/infra/env/env'
+import { EnvModule } from '@/core/infra/env/env.module'
 import { AuthModule } from '@/domain/auth/auth.module'
 import { IdentityModule } from '@/domain/identity/infra/identity.module'
-import { DATABASE } from '@/core/app/databases'
+import { DATABASE } from '@/core/application/databases'
 
 let mongo: MongoMemoryServer
 

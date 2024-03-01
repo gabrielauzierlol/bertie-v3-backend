@@ -1,5 +1,5 @@
 import { User } from '@/domain/identity/enterprise/entities/user'
-import { UniqueEntityID } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/domain/entities/unique-entity-id'
 import { MongooseDocument } from '@/core/types/mongo'
 import { MongoUser } from '../schemas/mongo-user-schema'
 

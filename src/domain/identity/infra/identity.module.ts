@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 
-import { CryptographyModule } from './cryptography/cryptography.module'
+import { CryptographyModule } from '../../../core/infra/cryptography/cryptography.module'
 import { AuthenticateUserController } from './http/controllers/authenticate-user.controller'
 import { AuthenticateUserUseCase } from '../application/use-cases/authenticate-user'
 import { RegisterUserController } from './http/controllers/register-user.controller'

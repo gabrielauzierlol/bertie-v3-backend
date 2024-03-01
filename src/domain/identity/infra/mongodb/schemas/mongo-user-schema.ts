@@ -15,7 +15,7 @@ export class MongoUser {
 export const MongoUserSchema = SchemaFactory.createForClass(MongoUser)
 
 export const MongoUserModel: ModelDefinition = {
-  name: 'users',
+  name: 'Identity_User',
   schema: MongoUserSchema,
   collection: 'Identity_User',
 }

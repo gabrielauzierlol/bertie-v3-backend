@@ -1,4 +1,4 @@
-import { EnvService } from '@/core/env/env.service'
+import { EnvService } from '@/core/infra/env/env.service'
 import { Injectable, OnModuleDestroy } from '@nestjs/common'
 import mongoose from 'mongoose'
 

@@ -4,7 +4,7 @@ import { MongoUsersRepository } from './repositories/mongo-users-repositories'
 
 import { MongooseModule } from '@nestjs/mongoose'
 import { MongoUserModel } from './schemas/mongo-user-schema'
-import { DATABASE } from '@/core/app/databases'
+import { DATABASE } from '@/core/application/databases'
 
 @Module({
   imports: [MongooseModule.forFeature([MongoUserModel], DATABASE.BERTIE)],

@@ -1,10 +1,10 @@
-import { Either, left, right } from '@/core/either'
 import { Injectable } from '@nestjs/common'
 
 import { UserAlreadyExistsError } from './errors/user-already-exists-error'
 import { UsersRepository } from '../repositories/users-repository'
-import { HashGenerator } from '../cryptography/hash-generator'
 import { User } from '../../enterprise/entities/user'
+import { Either, left, right } from '@/core/application/either'
+import { HashGenerator } from '@/core/application/cryptography/hash-generator'
 
 interface RegisterUserUseCaseRequest {
   name: string

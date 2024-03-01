@@ -7,7 +7,7 @@ import { UserFactory } from 'test/factories/make-user'
 import { hash } from 'bcryptjs'
 
 import request from 'supertest'
-import { DATABASE } from '@/core/app/databases'
+import { DATABASE } from '@/core/application/databases'
 
 describe('Authenticate user (e2e)', () => {
   let app: INestApplication

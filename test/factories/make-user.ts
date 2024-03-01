@@ -1,12 +1,15 @@
 import { faker } from '@faker-js/faker'
 
-import { UniqueEntityID } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/domain/entities/unique-entity-id'
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
-import { MongoUser } from '@/domain/identity/infra/mongodb/schemas/mongo-user-schema'
+import {
+  MongoUser,
+  MongoUserModel,
+} from '@/domain/identity/infra/mongodb/schemas/mongo-user-schema'
 import { Model } from 'mongoose'
 import { User, UserProps } from '@/domain/identity/enterprise/entities/user'
-import { DATABASE } from '@/core/app/databases'
+import { DATABASE } from '@/core/application/databases'
 
 export function makeUser(
   override: Partial<UserProps> = {},
@@ -28,7 +31,7 @@ export function makeUser(
 @Injectable()
 export class UserFactory {
   constructor(
-    @InjectModel('Identity_User', DATABASE.BERTIE)
+    @InjectModel(MongoUserModel.name, DATABASE.BERTIE)
     private model: Model<MongoUser>,
   ) {}
 

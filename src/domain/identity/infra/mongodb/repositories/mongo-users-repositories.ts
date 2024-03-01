@@ -2,12 +2,12 @@ import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 
-import { DATABASE } from '@/core/app/databases'
 import { UsersRepository } from '@/domain/identity/application/repositories/users-repository'
 import { User } from '@/domain/identity/enterprise/entities/user'
 
 import { MongoUserMapper } from '../mappers/mongo-user-mapper'
 import { MongoUser, MongoUserModel } from '../schemas/mongo-user-schema'
+import { DATABASE } from '@/core/application/databases'
 
 @Injectable()
 export class MongoUsersRepository implements UsersRepository {

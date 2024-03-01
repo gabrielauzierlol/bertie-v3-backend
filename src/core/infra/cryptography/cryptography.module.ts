@@ -3,9 +3,9 @@ import { Module } from '@nestjs/common'
 import { JwtEncrypter } from './jwt-encrypter'
 import { BcryptHasher } from './bcrypt-hasher'
 
-import { Encrypter } from '@/domain/identity/application/cryptography/encrypter'
-import { HashComparer } from '@/domain/identity/application/cryptography/hash-comparer'
-import { HashGenerator } from '@/domain/identity/application/cryptography/hash-generator'
+import { Encrypter } from '@/core/application/cryptography/encrypter'
+import { HashComparer } from '@/core/application/cryptography/hash-comparer'
+import { HashGenerator } from '@/core/application/cryptography/hash-generator'
 
 @Module({
   providers: [

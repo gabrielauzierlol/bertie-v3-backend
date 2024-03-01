@@ -1,4 +1,4 @@
-import { User } from "@/domain/identity/enterprise/entities/user";
+import { User } from '@/domain/identity/enterprise/entities/user'
 
 export abstract class UsersRepository {
   abstract findByEmail(email: string): Promise<User | null>

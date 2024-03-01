@@ -1,12 +1,12 @@
 import { Logger, Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { AuthModule } from '@/domain/auth/auth.module'
-import { envSchema } from '../env/env'
-import { EnvModule } from '../env/env.module'
+import { envSchema } from '../infra/env/env'
+import { EnvModule } from '../infra/env/env.module'
 import { IdentityModule } from '@/domain/identity/infra/identity.module'
-import { MongoModule } from '@/domain/common/infra/database/mongodb/mongo.module'
 import { MongooseModule } from '@nestjs/mongoose'
-import { EnvService } from '../env/env.service'
+import { EnvService } from '../infra/env/env.service'
+import { MongoModule } from '../infra/database/mongodb/mongo.module'
 import { DATABASE } from './databases'
 
 @Module({
