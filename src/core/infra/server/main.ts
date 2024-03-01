@@ -3,6 +3,7 @@ import { ConfigService } from '@nestjs/config'
 
 import { Env } from '@/core/infra/env/env'
 import { AppModule } from './app.module'
+import { Logger } from '@nestjs/common'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {})
@@ -11,6 +12,8 @@ async function bootstrap() {
 
   const port = configService.get('PORT', { infer: true })
 
-  await app.listen(port)
+  await app.listen(port, () => {
+    Logger.debug(`Listening at port ${port}`, 'main')
+  })
 }
 bootstrap()

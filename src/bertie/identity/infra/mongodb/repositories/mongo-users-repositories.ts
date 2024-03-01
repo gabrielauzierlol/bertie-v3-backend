@@ -16,6 +16,16 @@ export class MongoUsersRepository implements UsersRepository {
     private model: Model<MongoUser>,
   ) {}
 
+  async findById(id: string): Promise<User | null> {
+    const user = await this.model.findOne({ _id: id })
+
+    if (!user) {
+      return null
+    }
+
+    return MongoUserMapper.toDomain(user)
+  }
+
   async findByEmail(email: string): Promise<User | null> {
     const user = await this.model.findOne({ email })
 
