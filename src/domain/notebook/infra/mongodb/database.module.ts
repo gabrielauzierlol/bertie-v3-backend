@@ -27,7 +27,7 @@ import { DATABASE } from '@/core/app/databases'
         MongoAttachmentModel,
         MongoNoteAttachmentModel,
       ],
-      DATABASE.MAIN,
+      DATABASE.CONUBE,
     ),
   ],
   providers: [

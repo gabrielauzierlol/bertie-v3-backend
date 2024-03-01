@@ -28,7 +28,7 @@ export function makeUser(
 @Injectable()
 export class UserFactory {
   constructor(
-    @InjectModel('Identity_User', DATABASE.HOMOLOG)
+    @InjectModel('Identity_User', DATABASE.BERTIE)
     private model: Model<MongoUser>,
   ) {}
 

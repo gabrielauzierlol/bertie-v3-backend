@@ -10,7 +10,7 @@ import { DATABASE } from '@/core/app/databases'
 @Injectable()
 export class MongoAttachmentsRepository implements AttachmentsRepository {
   constructor(
-    @InjectModel('attachments', DATABASE.MAIN)
+    @InjectModel('attachments', DATABASE.CONUBE)
     private model: Model<MongoAttachment>,
   ) {}
 

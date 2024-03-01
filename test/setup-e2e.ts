@@ -15,7 +15,7 @@ let mongo: MongoMemoryServer
 
 export const rootMongooseTestModule = (options: MongooseModuleOptions = {}) =>
   MongooseModule.forRootAsync({
-    connectionName: DATABASE.HOMOLOG,
+    connectionName: DATABASE.BERTIE,
     useFactory: async () => {
       mongo = await MongoMemoryServer.create()
       const mongoUri = mongo.getUri()

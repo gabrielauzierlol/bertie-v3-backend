@@ -12,7 +12,7 @@ import { DATABASE } from '@/core/app/databases'
 @Injectable()
 export class MongoStudentsRepository implements StudentsRepository {
   constructor(
-    @InjectModel('students', DATABASE.MAIN) private model: Model<MongoStudent>,
+    @InjectModel('students', DATABASE.CONUBE) private model: Model<MongoStudent>,
   ) {}
 
   async findByEmail(email: string): Promise<Student | null> {

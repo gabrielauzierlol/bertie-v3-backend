@@ -26,7 +26,7 @@ export class MongoNoteAttachmentsRepository
   implements NoteAttachmentsRepository
 {
   constructor(
-    @InjectModel('note_attachments', DATABASE.MAIN)
+    @InjectModel('note_attachments', DATABASE.CONUBE)
     private model: Model<MongoNoteAttachment>,
   ) {}
 

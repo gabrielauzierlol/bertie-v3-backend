@@ -1,5 +1,5 @@
 export enum DATABASE {
-  MAIN = 'MAIN',
-  HOMOLOG = 'HOMOLOG',
-  TEST = 'TEST',
+  CONUBE = 'Conube',
+  BERTIE = 'Bertie',
+  TEST = 'Test',
 }

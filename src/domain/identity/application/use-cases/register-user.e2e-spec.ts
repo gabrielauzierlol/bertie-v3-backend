@@ -17,7 +17,7 @@ describe('Register user (e2e)', () => {
     const moduleRef = await Test.createTestingModule({
       imports: [
         TestAppModule,
-        MongooseModule.forFeature([MongoUserModel], DATABASE.HOMOLOG),
+        MongooseModule.forFeature([MongoUserModel], DATABASE.BERTIE),
       ],
       providers: [UserFactory],
     }).compile()

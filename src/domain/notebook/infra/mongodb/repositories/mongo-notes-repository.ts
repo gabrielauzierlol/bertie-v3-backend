@@ -13,7 +13,7 @@ import { DATABASE } from '@/core/app/databases'
 export class MongoNotesRepository implements NotesRepository {
   constructor(
     private noteAttachmentsRepository: NoteAttachmentsRepository,
-    @InjectModel('notes', DATABASE.MAIN) private model: Model<MongoNote>,
+    @InjectModel('notes', DATABASE.CONUBE) private model: Model<MongoNote>,
   ) {}
 
   async findById(id: string): Promise<Note | null> {

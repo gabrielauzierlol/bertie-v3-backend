@@ -7,7 +7,7 @@ import { MongoUserModel } from './schemas/mongo-user-schema'
 import { DATABASE } from '@/core/app/databases'
 
 @Module({
-  imports: [MongooseModule.forFeature([MongoUserModel], DATABASE.HOMOLOG)],
+  imports: [MongooseModule.forFeature([MongoUserModel], DATABASE.BERTIE)],
   providers: [
     {
       provide: UsersRepository,

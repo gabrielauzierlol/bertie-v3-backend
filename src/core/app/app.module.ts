@@ -20,7 +20,7 @@ import { DATABASE } from './databases'
     MongooseModule.forRootAsync({
       imports: [EnvModule],
       inject: [EnvService],
-      connectionName: DATABASE.MAIN,
+      connectionName: DATABASE.CONUBE,
       useFactory(env: EnvService) {
         const URI = env.get('DATABASE_URL')
         Logger.debug(`Mongo conected @ ${URI}`, 'InstanceLoader')
@@ -30,7 +30,7 @@ import { DATABASE } from './databases'
     MongooseModule.forRootAsync({
       imports: [EnvModule],
       inject: [EnvService],
-      connectionName: DATABASE.HOMOLOG,
+      connectionName: DATABASE.BERTIE,
       useFactory(env: EnvService) {
         const URI = env.get('DATABASE_URL_HOMOLOG')
         Logger.debug(`Mongo conected @ ${URI}`, 'InstanceLoader')

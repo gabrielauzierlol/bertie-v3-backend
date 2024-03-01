@@ -10,7 +10,7 @@ import { DATABASE } from '@/core/app/databases'
 @Injectable()
 export class MongoUsersRepository implements UsersRepository {
   constructor(
-    @InjectModel('Identity_User', DATABASE.HOMOLOG)
+    @InjectModel('Identity_User', DATABASE.BERTIE)
     private model: Model<MongoUser>,
   ) {}
 
