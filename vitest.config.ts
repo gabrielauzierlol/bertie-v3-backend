@@ -7,7 +7,7 @@ export default defineConfig({
   test: {
     globals: true,
     root: './',
-    exclude: [...configDefaults.exclude, '**/data/pg/**'],
+    exclude: [...configDefaults.exclude, '**/data/**'],
   },
   plugins: [
     tsConfigPaths(),

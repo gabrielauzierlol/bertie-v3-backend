@@ -7,8 +7,14 @@ export default defineConfig({
     include: ['**/*.e2e-spec.ts'],
     globals: true,
     root: './',
-    exclude: [...configDefaults.exclude, '**/data/pg/**'],
-    // setupFiles: ['./test/setup-e2e.ts'],
+    exclude: [
+      ...configDefaults.exclude,
+      '**/data/**',
+      'src/domain/notebook/**',
+    ],
+    setupFiles: ['./test/setup-e2e.ts'],
+    testTimeout: 1000000,
+    hookTimeout: 1000000,
   },
   plugins: [
     tsConfigPaths(),

@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mongodb:
+    container_name: study-app-prototype-mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongo:/data/db
+  app:
+    container_name: study-app-prototype-server
+    restart: always
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: npm run start:dev
+    depends_on:
+      - mongodb
+    ports:
+      - 3333:3333
