@@ -2,9 +2,9 @@ import { MongooseModule } from '@nestjs/mongoose'
 import { Logger, Module } from '@nestjs/common'
 
 import { DATABASE } from '@/core/application/databases'
-import { EnvService } from '@/core/infra/env/env.service'
 
-import { EnvModule } from '../../env/env.module'
+import { EnvService } from '@/core/infra/env/env.service'
+import { EnvModule } from '@/core/infra/env/env.module'
 
 @Module({
   imports: [

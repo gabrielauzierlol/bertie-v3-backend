@@ -1,9 +1,11 @@
-import { Injectable, Logger } from '@nestjs/common'
+import { Injectable } from '@nestjs/common'
+
+import { Either, left, right } from '@/core/application/either'
+import { Encrypter } from '@/core/application/cryptography/encrypter'
+import { HashComparer } from '@/core/application/cryptography/hash-comparer'
+
 import { WrongCredentialsError } from './errors/wrong-credentials-error'
 import { UsersRepository } from '../repositories/users-repository'
-import { HashComparer } from '@/core/application/cryptography/hash-comparer'
-import { Encrypter } from '@/core/application/cryptography/encrypter'
-import { Either, left, right } from '@/core/application/either'
 
 interface AuthenticateUserUseCaseRequest {
   email: string
@@ -34,8 +36,6 @@ export class AuthenticateUserUseCase {
     if (!user) {
       return left(new WrongCredentialsError())
     }
-
-    Logger.debug(user)
 
     const isPasswordValid = await this.hashComparer.compare(
       password,

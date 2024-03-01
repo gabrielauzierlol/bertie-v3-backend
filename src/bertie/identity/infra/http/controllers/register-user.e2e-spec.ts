@@ -2,7 +2,7 @@ import { INestApplication } from '@nestjs/common'
 import { Test } from '@nestjs/testing'
 import { TestAppModule } from 'test/setup-e2e'
 import { MongooseModule } from '@nestjs/mongoose'
-import { MongoUserModel } from '../../infra/mongodb/schemas/mongo-user-schema'
+import { MongoUserModel } from '../../mongodb/schemas/mongo-user-schema'
 import { UserFactory } from 'test/factories/make-user'
 import { hash } from 'bcryptjs'
 

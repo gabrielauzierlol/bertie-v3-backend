@@ -8,8 +8,8 @@ import {
   MongoUserModel,
 } from '@/bertie/identity/infra/mongodb/schemas/mongo-user-schema'
 import { Model } from 'mongoose'
-import { User, UserProps } from '@/bertie/identity/enterprise/entities/user'
 import { DATABASE } from '@/core/application/databases'
+import { User, UserProps } from '@/bertie/identity/enterprise/entities/user'
 
 export function makeUser(
   override: Partial<UserProps> = {},
