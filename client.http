@@ -6,6 +6,6 @@ POST {{baseUrl}}/identity/authenticate
 Content-Type: application/json
 
 {
-  "email": "victor.lima@loldesign.com.br",
-  "password": "victorlima2003"
+  "email": "gabriel@loldesign.com.br",
+  "password": "gabriel@lol"
 }
