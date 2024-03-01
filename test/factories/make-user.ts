@@ -6,9 +6,9 @@ import { InjectModel } from '@nestjs/mongoose'
 import {
   MongoUser,
   MongoUserModel,
-} from '@/domain/identity/infra/mongodb/schemas/mongo-user-schema'
+} from '@/bertie/identity/infra/mongodb/schemas/mongo-user-schema'
 import { Model } from 'mongoose'
-import { User, UserProps } from '@/domain/identity/enterprise/entities/user'
+import { User, UserProps } from '@/bertie/identity/enterprise/entities/user'
 import { DATABASE } from '@/core/application/databases'
 
 export function makeUser(

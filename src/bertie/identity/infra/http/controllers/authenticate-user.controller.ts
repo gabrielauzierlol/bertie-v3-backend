@@ -1,4 +1,4 @@
-import { Public } from '@/domain/auth/public'
+import { Public } from '@/bertie/auth/public'
 import {
   BadRequestException,
   Body,
@@ -8,8 +8,8 @@ import {
   UsePipes,
 } from '@nestjs/common'
 import { z } from 'zod'
-import { AuthenticateUserUseCase } from '@/domain/identity/application/use-cases/authenticate-user'
-import { WrongCredentialsError } from '@/domain/identity/application/use-cases/errors/wrong-credentials-error'
+import { AuthenticateUserUseCase } from '@/bertie/identity/application/use-cases/authenticate-user'
+import { WrongCredentialsError } from '@/bertie/identity/application/use-cases/errors/wrong-credentials-error'
 import { ZodValidationPipe } from '@/core/infra/pipes/zod-validation-pipe'
 
 const authenticateUserBodySchema = z.object({

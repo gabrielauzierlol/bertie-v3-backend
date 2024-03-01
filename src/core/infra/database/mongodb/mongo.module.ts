@@ -1,10 +1,23 @@
-import { Module } from '@nestjs/common'
+import { MongooseModule } from '@nestjs/mongoose'
+import { Logger, Module } from '@nestjs/common'
 
+import { DATABASE } from '@/core/application/databases'
 import { EnvService } from '@/core/infra/env/env.service'
-import { MongoService } from './mongo.service'
+
+import { EnvModule } from '../../env/env.module'
 
 @Module({
-  providers: [EnvService, MongoService],
-  exports: [MongoService],
+  imports: [
+    MongooseModule.forRootAsync({
+      imports: [EnvModule],
+      inject: [EnvService],
+      connectionName: DATABASE.BERTIE,
+      useFactory(env: EnvService) {
+        const URI = env.get('DATABASE_URL')
+        Logger.debug(`Mongo @ ${URI}`, 'MongooseModule')
+        return { uri: URI }
+      },
+    }),
+  ],
 })
 export class MongoModule {}

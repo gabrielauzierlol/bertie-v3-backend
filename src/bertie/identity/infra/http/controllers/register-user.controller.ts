@@ -1,4 +1,4 @@
-import { Public } from '@/domain/auth/public'
+import { Public } from '@/bertie/auth/public'
 import {
   BadRequestException,
   Body,
@@ -9,8 +9,8 @@ import {
   UsePipes,
 } from '@nestjs/common'
 import { z } from 'zod'
-import { RegisterUserUseCase } from '@/domain/identity/application/use-cases/register-user'
-import { UserAlreadyExistsError } from '@/domain/identity/application/use-cases/errors/user-already-exists-error'
+import { RegisterUserUseCase } from '@/bertie/identity/application/use-cases/register-user'
+import { UserAlreadyExistsError } from '@/bertie/identity/application/use-cases/errors/user-already-exists-error'
 import { ZodValidationPipe } from '@/core/infra/pipes/zod-validation-pipe'
 
 const registerUserBodySchema = z.object({

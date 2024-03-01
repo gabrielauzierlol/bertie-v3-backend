@@ -7,8 +7,8 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { envSchema } from '@/core/infra/env/env'
 import { EnvModule } from '@/core/infra/env/env.module'
-import { AuthModule } from '@/domain/auth/auth.module'
-import { IdentityModule } from '@/domain/identity/infra/identity.module'
+import { AuthModule } from '@/bertie/auth/auth.module'
+import { IdentityModule } from '@/bertie/identity/infra/identity.module'
 import { DATABASE } from '@/core/application/databases'
 
 let mongo: MongoMemoryServer
