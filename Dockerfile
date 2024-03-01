@@ -17,7 +17,7 @@ RUN pnpm run build
 
 FROM build AS production
 COPY --from=build /usr/src/app /usr/src/app
-EXPOSE 3333
+EXPOSE 3000
 WORKDIR /usr/src/app
 ENV ENVIRONMENT production
 ENV NODE_ENV production
