@@ -1,85 +1,11 @@
 @baseUrl = http://localhost:3333
 @authToken = {{authenticate.response.body.access_token}}
 
-# @name create_account
-POST {{baseUrl}}/accounts
-Content-Type: application/json
-
-{
-  "name": "Victor Lima",
-  "email": "victorlima@example.com",
-  "password": "123456"
-}
-
-###
-
-# @name create_user
-POST {{baseUrl}}/identity/users
-Content-Type: application/json
-
-{
-  "name": "Gabs",
-  "email": "gabsexample@example.com",
-  "password": "123456"
-}
-
-###
-
-# @name authenticate_user
+# @name authenticate
 POST {{baseUrl}}/identity/authenticate
 Content-Type: application/json
 
 {
-  "email": "gabriel@loldesign.com.br",
-  "password": "gabriel@lol"
+  "email": "victor.lima@loldesign.com.br",
+  "password": "victorlima2003"
 }
-
-###
-
-# @name authenticate
-POST {{baseUrl}}/sessions
-Content-Type: application/json
-
-{
-  "email": "johndoe@example.com",
-  "password": "123456"
-}
-
-###
-
-# @name create_note
-POST {{baseUrl}}/notes
-Content-Type: application/json
-Authorization: Bearer {{authToken}}
-
-{
-  "title": "New note ABCDADADADADAD",
-  "content": "Testing",
-  "attachments": ["65dcf9c0bf72801de26c2e62"]
-}
-
-###
-
-# @name fetch_recent_questions
-GET {{baseUrl}}/notes?page=1
-Content-Type: application/json
-Authorization: Bearer {{authToken}}
-
-###
-
-# @name edit_question
-PUT {{baseUrl}}/notes/65dc0f1b3f4f7eac3d381f2a
-Content-Type: application/json
-Authorization: Bearer {{authToken}}
-
-{
-  "title": "Meu bom bombom",
-  "content": "Teste 2.0"
-}
-
-###
-
-# @name edit_question
-DELETE {{baseUrl}}/notes/65dc0f1b3f4f7eac3d381f2a
-Content-Type: application/json
-Authorization: Bearer {{authToken}}

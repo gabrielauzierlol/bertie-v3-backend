@@ -1,5 +1,5 @@
 import { Either, left, right } from '@/core/either'
-import { Injectable } from '@nestjs/common'
+import { Injectable, Logger } from '@nestjs/common'
 import { Encrypter } from '../cryptography/encrypter'
 import { HashComparer } from '../cryptography/hash-comparer'
 import { WrongCredentialsError } from './errors/wrong-credentials-error'
@@ -29,15 +29,17 @@ export class AuthenticateUserUseCase {
     email,
     password,
   }: AuthenticateUserUseCaseRequest): Promise<AuthenticateUserUseCaseResponse> {
-    const User = await this.UsersRepository.findByEmail(email)
+    const user = await this.UsersRepository.findByEmail(email)
 
-    if (!User) {
+    if (!user) {
       return left(new WrongCredentialsError())
     }
 
+    Logger.debug(user)
+
     const isPasswordValid = await this.hashComparer.compare(
       password,
-      User.password,
+      user.password,
     )
 
     if (!isPasswordValid) {
@@ -45,7 +47,7 @@ export class AuthenticateUserUseCase {
     }
 
     const accessToken = await this.encrypter.encrypt({
-      sub: User.id.toString(),
+      sub: user.id.toString(),
     })
 
     return right({

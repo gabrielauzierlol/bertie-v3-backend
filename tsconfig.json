@@ -20,7 +20,6 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@/*": ["src/*"],
-      "@notebook/*": ["src/domain/notebook/*"]
     },
     "types": [
       "vitest/globals",
